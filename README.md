@@ -1,45 +1,66 @@
-# Swiggy Delivery Time Prediction
+# 🚀 Swiggy Delivery Time Prediction
 
-This project aims to predict the delivery time for food orders on the Swiggy platform using a machine learning model. Accurate ETA (Estimated Time of Arrival) prediction is critical for enhancing customer experience, reducing cancellations, and optimizing rider allocation.
+## 📌 Project Overview
 
-## Business Problem
-Swiggy processes millions of food-delivery journeys. Inaccurate ETAs lead to:
-* Reduced customer trust and lower retention.
-* Increased cancellations and refund costs.
-* Operational inefficiencies and sub-optimal rider allocation.
+This project uses Machine Learning to predict the estimated delivery time of Swiggy orders based on rider details, weather conditions, traffic, location, and order information. 
+A Streamlit web application is developed to provide users with real-time delivery time predictions through an interactive interface.
 
-## Objective
-Develop a scalable, production-ready machine learning system that predicts delivery time (in minutes) at the moment of order placement, accounting for historical and real-time features.
+## 🎯 Objective
 
-## Dataset
-The dataset includes various features such as:
-- **Rider Metrics:** Age, ratings, vehicle condition, vehicle type.
-- **Order Metrics:** Type of order, number of deliveries, pickup time.
-- **Environmental/Temporal Metrics:** Traffic, weather, festival, weekend, time of day.
-- **Geospatial Metrics:** Distance between restaurant and delivery location.
+To build a regression model that accurately predicts the delivery time of food orders, helping improve delivery planning and customer experience.
 
-## Methodology
-1. **Data Preprocessing:** Handled missing values using `SimpleImputer` (median for numerical, most frequent for categorical data) and managed categorical variables using `OneHotEncoder` and `OrdinalEncoder`.
-2. **Feature Scaling:** Used `StandardScaler` to normalize numerical features.
-3. **Model Building:** Experimented with multiple regression algorithms:
-    - Linear Regression
-    - K-Nearest Neighbors (KNN)
-    - Decision Tree Regressor
-    - Support Vector Machine (SVR)
-    - Random Forest Regressor
-    - **XGBoost Regressor** (Chosen for best performance)
-4. **Optimization:** Used `GridSearchCV` and `Optuna` (Bayesian Optimization) to tune hyperparameters.
+## ✨ Features
 
-## Results
-The final model, based on XGBoost, achieved strong predictive performance with an $R^2$ score of approximately **0.81** on the test set.
+- Predicts delivery time in minutes
+- Interactive Streamlit web application
+- Uses both numerical and categorical features
+- Real-time predictions with a trained ML model
+- Simple and user-friendly interface
 
-## Tech Stack
+## 🛠️ Technologies Used
+
 - Python
 - Pandas
+- NumPy
 - Scikit-learn
 - XGBoost
-- Pickle (for model serialization)
+- Streamlit
+- Pickle
 
 ## 📂 Project Structure
-- `Swiggy-Delivery-Time-Prediction.ipynb`: Jupyter notebook containing the end-to-end data processing, modeling, and evaluation pipeline.
-- `model.pkl`: Serialized model file for production use.
+
+├── app.py
+├── Swiggy-Delivery-Time-Prediction.ipynb
+├── swiggy-project.pkl
+├── swiggy_demographic.csv
+├── requirements.txt
+└── README.md
+
+## ▶️ Installation
+
+1. Clone the repository
+
+git clone https://github.com/BaddamPravallika/Swiggy-delivery-time-prediction.git
+
+2. Install the required packages
+
+pip install -r requirements.txt
+
+3. Run the application
+
+streamlit run app.py
+
+## 📊 Input Features
+
+- Rider Details (Age, Rating, Vehicle Condition)
+- Weather & Traffic
+- City Information
+- Order Details
+- Distance
+- Pickup Time
+- Order Time
+
+
+## 📈 Output
+
+The model predicts the **estimated delivery time (in minutes)** based on the input details provided by the user.
