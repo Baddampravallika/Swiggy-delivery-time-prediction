@@ -40,7 +40,7 @@ To build a regression model that accurately predicts the delivery time of food o
 
 1. Clone the repository
 
-git clone https://github.com/BaddamPravallika/Swiggy-delivery-time-prediction.git
+git clone https://github.com/Baddampravallika/Swiggy-delivery-time-prediction.git
 
 2. Install the required packages
 
